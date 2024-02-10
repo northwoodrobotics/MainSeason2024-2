@@ -34,7 +34,7 @@ public class RobotContainer {
     /* Subsystems */
     private final Swerve s_Swerve = new Swerve();
     private final Shooter m_shooter = new Shooter();
-    private final Intake m_intake = new Intake();
+    private final Indexer m_indexer = new Indexer();
 
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -52,7 +52,7 @@ public class RobotContainer {
         // Configure the button bindings
         configureButtonBindings();
         m_shooter.setDefaultCommand(new TeleShooter (m_shooter,() -> ((codriver.getRightTriggerAxis()-codriver.getLeftTriggerAxis()))));
-        m_intake.setDefaultCommand(new TeleIntake(m_intake, () -> ((driver.getRightTriggerAxis()-driver.getLeftTriggerAxis()))));
+        m_indexer.setDefaultCommand(new TeleIndexer(m_indexer, () -> ((driver.getRightTriggerAxis()-driver.getLeftTriggerAxis()))));
     }
 
     /**

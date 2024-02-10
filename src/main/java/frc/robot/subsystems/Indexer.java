@@ -14,30 +14,30 @@ import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.GenericHID;
 
 
-public class Intake extends SubsystemBase {
-  private final TalonFX m_intakeMotor = new TalonFX(rightShooterID);
+public class Indexer extends SubsystemBase {
+  private final TalonFX m_indexMotor = new TalonFX(indexMotorID);
 
   /** Creates a new Intake. */
-  public Intake() {
+  public Indexer() {
     
 
-    m_intakeMotor.getConfigurator().apply(new TalonFXConfiguration());
+    m_indexMotor.getConfigurator().apply(new TalonFXConfiguration());
 
-    m_intakeMotor.setInverted(true);
+    m_indexMotor.setInverted(true);
     
   }
 
   
   public void move(double pwr) {
    
-    m_intakeMotor.set(pwr);
+    m_indexMotor.set(pwr);
 
   }
 
 
  
   public void stop() {
-    m_intakeMotor.stopMotor();;
+    m_indexMotor.stopMotor();;
   }
 
  

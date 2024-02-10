@@ -2,34 +2,34 @@ package frc.robot.commands;
 
 
 
-import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Indexer;
 
 import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj2.command.Command;
 
 
-public class TeleIntake extends Command {
+public class TeleIndexer extends Command {
 
-      private final Intake m_intake;
+      private final Indexer m_indexer;
       private DoubleSupplier pwr;
 
  
 
 
-  public TeleIntake(Intake m_intake, DoubleSupplier pwr) {
+  public TeleIndexer(Indexer m_indexer, DoubleSupplier pwr) {
 
   
-      this.m_intake = m_intake;
+      this.m_indexer = m_indexer;
       this.pwr=pwr;
-      addRequirements(m_intake);
+      addRequirements(m_indexer);
 
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_intake.move(pwr.getAsDouble());
+    m_indexer.move(pwr.getAsDouble());
   }
 
   // Returns true when the command should end.
@@ -44,6 +44,6 @@ public class TeleIntake extends Command {
   @Override
   public void end(boolean interrupted) {
     // Stop the wheels when the command ends.
-    m_intake.stop();
+    m_indexer.stop();
   }
 }

@@ -31,8 +31,17 @@ public class Shooter extends SubsystemBase {
     
   }
 
+  public Command getIntakeCommand(){
+
+    return this.startEnd(
+      () -> {launch(kShooterIntakeSpeed);
+      },
+      () -> {
+        stop();
+      });
+  }
   
-  public void move(double pwr) {
+  public void launch(double pwr) {
     if (xbox.getRawButton(2))
     {
       pwr=pwr*0.5;

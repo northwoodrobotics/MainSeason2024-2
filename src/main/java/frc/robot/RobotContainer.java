@@ -51,7 +51,11 @@ public class RobotContainer {
 
         // Configure the button bindings
         configureButtonBindings();
-        m_shooter.setDefaultCommand(new TeleShooter (m_shooter,() -> ((codriver.getRightTriggerAxis()-codriver.getLeftTriggerAxis()))));
+        //run shooter forward
+        codriver.leftBumper().whileTrue(new TeleShooter (m_shooter));
+        //run shooter wheels as intake
+        codriver.rightBumper().whileTrue(m_shooter.getIntakeCommand());
+
         m_indexer.setDefaultCommand(new TeleIndexer(m_indexer, () -> ((driver.getRightTriggerAxis()-driver.getLeftTriggerAxis()))));
     }
 

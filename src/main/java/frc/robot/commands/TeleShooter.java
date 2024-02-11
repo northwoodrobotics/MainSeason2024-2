@@ -17,10 +17,10 @@ public class TeleShooter extends Command {
  
 
 
-  public TeleShooter(Shooter m_shooter, DoubleSupplier pwr) {
+  public TeleShooter(Shooter shooter, DoubleSupplier pwr) {
 
   
-      this.m_shooter = m_shooter;
+      m_shooter = shooter;
       this.pwr=pwr;
       addRequirements(m_shooter);
 

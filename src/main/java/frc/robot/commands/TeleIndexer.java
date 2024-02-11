@@ -17,10 +17,10 @@ public class TeleIndexer extends Command {
  
 
 
-  public TeleIndexer(Indexer m_indexer, DoubleSupplier pwr) {
+  public TeleIndexer(Indexer indexer, DoubleSupplier pwr) {
 
   
-      this.m_indexer = m_indexer;
+      m_indexer = indexer;
       this.pwr=pwr;
       addRequirements(m_indexer);
 
